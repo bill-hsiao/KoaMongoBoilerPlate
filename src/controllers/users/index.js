@@ -2,8 +2,13 @@ const Router = require('koa-router')
 const router = new Router()
 const Controller = require('src/controllers/users/controller')
 
-router.get('/', Controller.hello)
 router.post('/register', Controller.register)
-// router.post('/authenticate', sCtrl.authenticate)
+router.post('/authenticate', Controller.authenticate)
+router.put('/:id', Controller.update)
+router.delete('/:id', Controller.delete)
+router.get('/:id', Controller.getById)
+router.get('/current', Controller.getCurrent)
+router.get('/', Controller.getAll)
+
 
 module.exports = router.routes()

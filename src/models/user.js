@@ -8,6 +8,9 @@ const User = new Schema({
 })
 
 User.set('toJSON', { virtuals: true });
-
+User.pre('save', function(next) {
+  console.log('before save');
+  next();
+});
 
 module.exports = mongoose.model('User', User);

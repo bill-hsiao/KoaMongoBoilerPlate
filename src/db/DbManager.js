@@ -17,12 +17,7 @@ class DbManager {
       console.log(`connected to MongoDB at ${mongoose.connection.host}:${mongoose.connection.port}`)
     })}
   }
-  test() {
-    const User = require('src/models/user')
-    User.findOne({ username: 'test' })
-  } catch (err) {
-    console.log(err);
-  }
+  
 }
 
 module.exports = DbManager
